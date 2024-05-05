@@ -1,7 +1,7 @@
 {
   "redirects": [
     { 
-      "source": "subscribe",
+      "source": "/subscribe",
       "destination": "https://www.youtube.com/@cstuff1?sub_confirmation=1", 
       "statusCode": 301
     }
