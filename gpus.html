@@ -1,48 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>RGB Rainbow Gradient Background on Scroll</title>
-<style>
-    body {
-        margin: 0;
-        padding: 0;
-        height: 2000px; /* Set height to allow scrolling */
-        transition: background 0.5s ease; /* Smooth transition for background change */
-    }
-</style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RGB Gradient Background</title>
+    <link rel="stylesheet" href="style.css">
 </head>
-<body onscroll="changeGradientColor()">
-<h2>1.</h2>
-	        <h2>Favorite GPU:</h2>
-		
-			<li>Nvidia geforce RTX 4090</li>
-			<img src="GeForce-RTX4090-3QTR-Back-Left-1-removebg-preview.png"
-		
-<h2>2.</h2>
-	        <h2>Favorite budget gpu:</h2>
-		
-			<li>Amd Radeon rx 580</li>
-			<img src="download__6_-removebg-preview.png"
-<script>
-function changeGradientColor() {
-   
-    var scrollTop = window.scrollY;
-    
-    
-    var scrollPercent = (scrollTop / (document.documentElement.scrollHeight - window.innerHeight)) * 100;
-    
-
-    var red = Math.round(255 * scrollPercent / 100);
-    var green = Math.round(255 * (1 - scrollPercent / 100));
-    var blue = 0;
-    
-
-    document.body.style.background = 'rgb(' + red + ', ' + green + ', ' + blue + ')';
-}
-</script>
-
-</body>
+<body>
+    </body>
 </html>
-
