@@ -1,11 +1,40 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>RGB Gradient Background</title>
-    <link rel="stylesheet" href="style.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>RGB Rainbow Gradient Background on Scroll</title>
+<style>
+    body {
+        margin: 0;
+        padding: 0;
+        height: 2000px; /* Set height to allow scrolling */
+        transition: background 0.5s ease; /* Smooth transition for background change */
+    }
+</style>
 </head>
-<body>
-    </body>
+<body onscroll="changeGradientColor()">
+
+<!-- Your content here -->
+
+<script>
+function changeGradientColor() {
+    // Get the scroll position
+    var scrollTop = window.scrollY;
+    
+    // Calculate the percentage of how far down the user has scrolled
+    var scrollPercent = (scrollTop / (document.documentElement.scrollHeight - window.innerHeight)) * 100;
+    
+    // Calculate the RGB values for each color stop
+    var red = Math.round(255 * scrollPercent / 100);
+    var green = Math.round(255 * (1 - scrollPercent / 100));
+    var blue = 0;
+    
+    // Set the background color
+    document.body.style.background = 'rgb(' + red + ', ' + green + ', ' + blue + ')';
+}
+</script>
+
+</body>
 </html>
+
