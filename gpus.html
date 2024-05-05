@@ -3,68 +3,21 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Rainbow Gradient Background</title>
+<title>Rainbow Gradient Background on Scroll</title>
 <style>
     body {
         margin: 0;
         padding: 0;
         height: 2000px; /* Set height to allow scrolling */
-        background: linear-gradient(to bottom, white, black); /* Initial gradient */
+        background: linear-gradient(to bottom, red, orange, yellow, green, blue, indigo, violet);
+        transition: background 0.5s ease; /* Smooth transition for background change */
     }
 </style>
 </head>
 <body onscroll="changeGradientColor()">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Infinite Scroller</title>
-<style>
-    #content {
-        width: 80%;
-        margin: 20px auto;
-    }
-    .item {
-        border: 1px solid #ccc;
-        padding: 20px;
-        margin-bottom: 10px;
-    }
-</style>
-</head>
-<body>
 
-<div id="content">
-    <!-- Initial content -->
-    <div class="item">Item 1</div>
-    <div class="item">Item 2</div>
-    <div class="item">Item 3</div>
-</div>
+<!-- Your content here -->
 
-<script>
-window.addEventListener('scroll', function() {
-    if ((window.innerHeight + window.scrollY) >= document.body.offsetHeight) {
-        // Load more content
-        loadMore();
-    }
-});
-
-var itemCount = 3; // Initial number of items
-
-function loadMore() {
-    // Simulate loading delay (you can replace this with actual content loading)
-    setTimeout(function() {
-        var content = document.getElementById('content');
-        for (var i = 0; i < 5; i++) {
-            itemCount++;
-            var newItem = document.createElement('div');
-            newItem.className = 'item';
-            newItem.textContent = 'Item ' + itemCount;
-            content.appendChild(newItem);
-        }
-    }, 500); // Simulated loading delay of 500 milliseconds
-}
-</script>
-
-</body>
 <script>
 function changeGradientColor() {
     // Get the scroll position
@@ -73,4 +26,35 @@ function changeGradientColor() {
     // Calculate the percentage of how far down the user has scrolled
     var scrollPercent = (scrollTop / (document.documentElement.scrollHeight - window.innerHeight)) * 100;
     
-    // Convert the scroll percentage to a value between 0 and 255 (for RGB color)
+    // Calculate the color stops for the gradient based on the scroll position
+    var colorStops = [
+        { percent: 0, color: 'red' },
+        { percent: 15, color: 'orange' },
+        { percent: 30, color: 'yellow' },
+        { percent: 45, color: 'green' },
+        { percent: 60, color: 'blue' },
+        { percent: 75, color: 'indigo' },
+        { percent: 100, color: 'violet' }
+    ];
+    
+    // Find the two color stops between which the current scroll position falls
+    var startColor, endColor;
+    for (var i = 0; i < colorStops.length - 1; i++) {
+        if (scrollPercent >= colorStops[i].percent && scrollPercent < colorStops[i + 1].percent) {
+            startColor = colorStops[i].color;
+            endColor = colorStops[i + 1].color;
+            break;
+        }
+    }
+    
+    // Calculate the interpolated color based on the scroll position
+    var color = interpolateColor(startColor, endColor, (scrollPercent - colorStops[i].percent) / (colorStops[i + 1].percent - colorStops[i].percent));
+    
+    // Set the background color
+    document.body.style.background = 'linear-gradient(to bottom, ' + color + ', ' + endColor + ')';
+}
+
+// Function to interpolate color between two colors
+function interpolateColor(color1, color2, factor) {
+    if (arguments.length <
+
