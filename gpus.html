@@ -15,7 +15,40 @@
 </head>
 <body onscroll="changeGradientColor()">
 
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Rainbow Gradient Background</title>
+<style>
+    body {
+        margin: 0;
+        padding: 0;
+        height: 2000px; /* Set height to allow scrolling */
+        background: linear-gradient(to bottom, white, black); /* Initial gradient */
+    }
+</style>
+</head>
+<body onscroll="changeGradientColor()">
+
 <!-- Your content here -->
+
+<script>
+function changeGradientColor() {
+    // Get the scroll position
+    var scrollTop = window.scrollY;
+    
+    // Calculate the percentage of how far down the user has scrolled
+    var scrollPercent = (scrollTop / (document.documentElement.scrollHeight - window.innerHeight)) * 100;
+    
+    // Convert the scroll percentage to a value between 0 and 255 (for RGB color)
+    var colorValue = Math.round((scrollPercent / 100) * 255);
+    
+    // Set the background gradient with the updated color
+    document.body.style.background = "linear-gradient(to bottom, rgb(" + colorValue + ", " + colorValue + ", " + colorValue + "), black)";
+}
+</script>
+
+</body>
 
 <script>
 function changeGradientColor() {
