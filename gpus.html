@@ -15,90 +15,7 @@
 </head>
 <body onscroll="changeGradientColor()">
 
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Rainbow Gradient Background</title>
-<style>
-    body {
-        margin: 0;
-        padding: 0;
-        height: 2000px; /* Set height to allow scrolling */
-        background: linear-gradient(to bottom, white, black); /* Initial gradient */
-    }
-</style>
-</head>
-<body onscroll="changeGradientColor()">
 
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Infinite Scroller</title>
-<style>
-    #content {
-        width: 80%;
-        margin: 20px auto;
-    }
-    .item {
-        border: 1px solid #ccc;
-        padding: 20px;
-        margin-bottom: 10px;
-    }
-</style>
-</head>
-<body>
-
-<div id="content">
-    <!-- Initial content -->
-    <div class="item">Item 1</div>
-    <div class="item">Item 2</div>
-    <div class="item">Item 3</div>
-</div>
-
-<script>
-window.addEventListener('scroll', function() {
-    if ((window.innerHeight + window.scrollY) >= document.body.offsetHeight) {
-        // Load more content
-        loadMore();
-    }
-});
-
-var itemCount = 3; // Initial number of items
-
-function loadMore() {
-    // Simulate loading delay (you can replace this with actual content loading)
-    setTimeout(function() {
-        var content = document.getElementById('content');
-        for (var i = 0; i < 5; i++) {
-            itemCount++;
-            var newItem = document.createElement('div');
-            newItem.className = 'item';
-            newItem.textContent = 'Item ' + itemCount;
-            content.appendChild(newItem);
-        }
-    }, 500); // Simulated loading delay of 500 milliseconds
-}
-</script>
-
-</body>
-
-<script>
-function changeGradientColor() {
-    // Get the scroll position
-    var scrollTop = window.scrollY;
-    
-    // Calculate the percentage of how far down the user has scrolled
-    var scrollPercent = (scrollTop / (document.documentElement.scrollHeight - window.innerHeight)) * 100;
-    
-    // Convert the scroll percentage to a value between 0 and 255 (for RGB color)
-    var colorValue = Math.round((scrollPercent / 100) * 255);
-    
-    // Set the background gradient with the updated color
-    document.body.style.background = "linear-gradient(to bottom, rgb(" + colorValue + ", " + colorValue + ", " + colorValue + "), black)";
-}
-</script>
-
-</body>
 
 <script>
 function changeGradientColor() {
@@ -120,3 +37,4 @@ function changeGradientColor() {
 
 </body>
 </html>
+
