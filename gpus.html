@@ -14,7 +14,6 @@
 </style>
 </head>
 <body onscroll="changeGradientColor()">
-
 <h2>1.</h2>
 	        <h2>Favorite GPU:</h2>
 		
@@ -26,26 +25,24 @@
 		
 			<li>Amd Radeon rx 580</li>
 			<img src="download__6_-removebg-preview.png"
-
 <script>
 function changeGradientColor() {
-    // Get the scroll position
+   
     var scrollTop = window.scrollY;
     
-    // Calculate the percentage of how far down the user has scrolled
+    
     var scrollPercent = (scrollTop / (document.documentElement.scrollHeight - window.innerHeight)) * 100;
     
-    // Calculate the RGB values for each color stop
+
     var red = Math.round(255 * scrollPercent / 100);
     var green = Math.round(255 * (1 - scrollPercent / 100));
     var blue = 0;
     
-    // Set the background color
+
     document.body.style.background = 'rgb(' + red + ', ' + green + ', ' + blue + ')';
 }
 </script>
 
 </body>
 </html>
-
 
