@@ -8,14 +8,19 @@
     body {
         margin: 0;
         padding: 0;
-        height: 100vh; /* Set the height to fill the viewport */
-        background: linear-gradient(to right, red, orange, yellow, green, blue, indigo, violet);
+        height: 2000px; /* Set height to allow scrolling */
+        background: linear-gradient(to bottom, white, black); /* Initial gradient */
     }
 </style>
 </head>
-<body>
+<body onscroll="changeGradientColor()">
 
-
-
-</body>
-</html>
+<script>
+function changeGradientColor() {
+    // Get the scroll position
+    var scrollTop = window.scrollY;
+    
+    // Calculate the percentage of how far down the user has scrolled
+    var scrollPercent = (scrollTop / (document.documentElement.scrollHeight - window.innerHeight)) * 100;
+    
+    // Convert the scroll percentage to a value between 0 and 255 (for RGB color)
