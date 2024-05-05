@@ -30,7 +30,57 @@
 </head>
 <body onscroll="changeGradientColor()">
 
-<!-- Your content here -->
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Infinite Scroller</title>
+<style>
+    #content {
+        width: 80%;
+        margin: 20px auto;
+    }
+    .item {
+        border: 1px solid #ccc;
+        padding: 20px;
+        margin-bottom: 10px;
+    }
+</style>
+</head>
+<body>
+
+<div id="content">
+    <!-- Initial content -->
+    <div class="item">Item 1</div>
+    <div class="item">Item 2</div>
+    <div class="item">Item 3</div>
+</div>
+
+<script>
+window.addEventListener('scroll', function() {
+    if ((window.innerHeight + window.scrollY) >= document.body.offsetHeight) {
+        // Load more content
+        loadMore();
+    }
+});
+
+var itemCount = 3; // Initial number of items
+
+function loadMore() {
+    // Simulate loading delay (you can replace this with actual content loading)
+    setTimeout(function() {
+        var content = document.getElementById('content');
+        for (var i = 0; i < 5; i++) {
+            itemCount++;
+            var newItem = document.createElement('div');
+            newItem.className = 'item';
+            newItem.textContent = 'Item ' + itemCount;
+            content.appendChild(newItem);
+        }
+    }, 500); // Simulated loading delay of 500 milliseconds
+}
+</script>
+
+</body>
 
 <script>
 function changeGradientColor() {
