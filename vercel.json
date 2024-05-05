@@ -1,13 +1,5 @@
 {
   "redirects": [
-    {
-      "source": "/subscribe",
-      "has": [
-        {
-          "type": "host",
-          "value": "cstuff.vercel.app"
-        }
-      ],
-      "destination": "https://www.youtube.com/@cstuff1?sub_confirmation=1",
-      "permanent": true
-    }
+    { "source": "/subscribe", "destination": "https://www.youtube.com/@cstuff1?sub_confirmation=1", "statusCode": 301 }
+  ]
+}
