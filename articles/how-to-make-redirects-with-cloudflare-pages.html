@@ -1,1 +1,31 @@
-
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>How to Create a Custom Redirect with Cloudflare Pages</title>
+    <style>
+      body {
+        background-color: #36a1d6;
+        /* Elsa blue color */
+      }
+    </style>
+  </head>
+  <body>
+    <h1>How to Create a Custom Redirect with Cloudflare Pages</h1>
+    <p>In this article, we will guide you through the process of creating a custom redirect for your website using Cloudflare Pages. Cloudflare Pages is a powerful platform that allows you to deploy and host your static websites easily. By following these steps, you'll be able to set up a redirect to another URL of your choice, giving you full control over your website's redirection.</p>
+    <h2>Step 1: Sign up for Cloudflare Pages</h2>
+    <p>Visit the Cloudflare website ( <a href="https://pages.cloudflare.com/">pages.cloudflare.com</a>) and sign up for an account if you haven't already. Once signed in, click on "Get Started" to create a new project. </p>
+    <h2>Step 2: Set up your Cloudflare Pages project</h2>
+    <p>Choose your preferred Git provider and connect your repository that contains the website you want to redirect from. Configure your build settings based on your website's setup (e.g., static site generator, build command, and output directory). Review and confirm your project settings, then click on "Begin Setup."</p>
+    <h2>Step 3: Make the redirect</h2>
+    <p>In your Cloudflare Pages Git repo, make a new file called <code>_redirects</code>. Edit the file to your liking with this example: <code>/source https://domain.tld/</code>. For multiple domains, just make a new line and do the same thing. </p>
+    <h2>Step 4: Deploy your changes</h2>
+    <p>Cloudflare Pages will automatically detect the changes and trigger a new build and deployment process. Wait for the deployment process to complete, and your website with the custom redirect will be live.</p>
+    <h2>Step 5: Testing the redirect</h2>
+    <p>Open a web browser and visit your website's URL. The custom redirect should now be in effect, redirecting visitors to the specified URL.</p>
+    <p>
+      <em>Note: You should not provide a list of sources/bibliography at the end of the response.</em>
+    </p>
+  </body>
+</html>
